@@ -28,7 +28,7 @@ pipeline {
         // sh 'git checkout master'
         script{
           def BRANCH = sh(
-              script: 'git rev-parse --abbrev-ref HEAD'
+              script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
               // returnStdout: true
             ).trim()
           echo "Current branch $BRANCH"
