@@ -24,6 +24,7 @@ pipeline {
         branch "*release*"
       }
       steps {
+        sh 'git fetch'
         sh 'git status'
         sh 'git branch -a'
         // sh 'git checkout master'
