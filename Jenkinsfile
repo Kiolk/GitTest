@@ -27,15 +27,17 @@ pipeline {
         sh 'git status'
         // sh 'git checkout master'
         script{
-          def BRANCH = sh(
+          sh(
               script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
               // returnStdout: true
             )
           def OUTPUT = readFile('curent_branch.txt').trim()
-          echo "Current branch $BRANCH"
           echo "Current branch $OUTPUT"
         }
-        // sh 'git merge 
+          sh 'git checkout master'
+          sh "git merge $OUTPUT" 
+          sh 'git log'
+          sh 'git push origin'
         echo 'PostDeploy'
       }
     }
