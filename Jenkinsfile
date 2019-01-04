@@ -26,7 +26,14 @@ pipeline {
       steps {
         sh 'git status'
         sh 'git checkout master'
-        // sh 'git merge '
+        script{
+          def BRANCH = sh(
+              script: 'git rev-parse --abbrev-ref HEAD'
+              returnStdout: true
+            ).trim()
+          echo "Current branch $BRANCH"
+        }
+        // sh 'git merge 
         echo 'PostDeploy'
       }
     }
