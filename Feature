@@ -1,0 +1,4 @@
+class Feature{
+
+    public static String name = "Default name"
+}
