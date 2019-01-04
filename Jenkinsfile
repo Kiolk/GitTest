@@ -25,7 +25,7 @@ pipeline {
       }
       steps {
         sh 'git status'
-        sh 'git checkout master'
+        // sh 'git checkout master'
         script{
           def BRANCH = sh(
               script: 'git rev-parse --abbrev-ref HEAD'
