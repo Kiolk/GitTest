@@ -29,7 +29,7 @@ pipeline {
         script{
           def BRANCH = sh(
               script: 'git rev-parse --abbrev-ref HEAD'
-              returnStdout: true
+              // returnStdout: true
             ).trim()
           echo "Current branch $BRANCH"
         }
