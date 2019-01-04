@@ -24,6 +24,9 @@ pipeline {
         branch "*release*"
       }
       steps {
+        sh 'git status'
+        sh 'git checkout master'
+        // sh 'git merge '
         echo 'PostDeploy'
       }
     }
