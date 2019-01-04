@@ -8,6 +8,7 @@ pipeline {
     }
     stage('Building') {
       steps {
+        sh 'git branch -a'
         echo 'Building'
       }
     }
