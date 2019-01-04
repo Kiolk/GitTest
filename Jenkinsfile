@@ -25,6 +25,7 @@ pipeline {
       }
       steps {
         sh 'git status'
+        sh 'git branch'
         // sh 'git checkout master'
         script{
           sh(
