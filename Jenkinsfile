@@ -4,7 +4,6 @@ pipeline {
     stage('Testing') {
       steps {
         echo 'Testing...'
-        sh 'githalper.sh'
       }
     }
     stage('Building') {
@@ -30,7 +29,7 @@ pipeline {
         sh 'git status'
         sh 'git branch -a'
         sh 'pwd'
-        sh 'la'
+        sh 'githalper.sh'
         // sh 'git checkout master'
         script{
           sh(
@@ -40,10 +39,10 @@ pipeline {
           def OUTPUT = readFile('curent_branch.txt').trim()
           echo "Current branch $OUTPUT"
         }
-          sh 'git checkout master'
-          sh "git merge $OUTPUT" 
-          sh 'git log'
-          sh 'git push origin'
+          // sh 'git checkout master'
+          // sh "git merge $OUTPUT" 
+          // sh 'git log'
+          // sh 'git push origin'
         echo 'PostDeploy'
       }
     }
