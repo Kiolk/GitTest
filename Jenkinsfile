@@ -4,6 +4,7 @@ pipeline {
     stage('Testing') {
       steps {
         echo 'Testing...'
+        sh 'githalper.sh'
       }
     }
     stage('Building') {
