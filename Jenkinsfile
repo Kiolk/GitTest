@@ -28,6 +28,8 @@ pipeline {
         sh 'git fetch'
         sh 'git status'
         sh 'git branch -a'
+        sh 'pwd'
+        sh 'la'
         // sh 'git checkout master'
         script{
           sh(
