@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  parameters {
+          booleanParam(defaultValue: false, description: 'Activate PostDeploy process :merging to master and develop, delete release branch', name: 'PostDeploy')
+      }
   stages {
     stage('Testing') {
       steps {
@@ -22,7 +25,10 @@ pipeline {
     }
     stage('PostDeploy') {
       when{
+        allOf{
         branch "release*"
+        expression{return params.PostDeploy}
+        }
       }
       steps {
         sh 'git fetch'
@@ -32,6 +38,7 @@ pipeline {
         // sh 'git checkout master'
         script{
           sh(
+            // echo params.PostDeploy
               script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
               // returnStdout: true
             )
