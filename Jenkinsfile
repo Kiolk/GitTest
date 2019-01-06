@@ -32,6 +32,7 @@ pipeline {
         allOf{
         branch "release*"
         expression{return params.PostDeploy}
+        
         }
       }
       steps {
