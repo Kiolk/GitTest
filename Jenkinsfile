@@ -36,7 +36,7 @@ pipeline {
         sh 'git branch -a'
         sh 'pwd'
         script{
-          sh{
+          sh(
               script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
             )
           def OUTPUT = readFile('curent_branch.txt').trim()
