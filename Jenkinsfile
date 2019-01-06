@@ -6,6 +6,10 @@ pipeline {
   stages {
     stage('Testing') {
       steps {
+        echo "${env.JOB_NAME}"
+        echo "${env.GIT_BRANCH}"
+        echo "${env.GIT_URL}"
+        echo "${env.GIT_COMMIT}"
         echo 'Testing...'
       }
     }
