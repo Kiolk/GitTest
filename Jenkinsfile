@@ -43,10 +43,6 @@ pipeline {
           sh "githalper.sh $OUTPUT"
           echo "Current branch $OUTPUT"
         }
-          // sh 'git checkout master'
-          // sh "git merge $OUTPUT" 
-          // sh 'git log'
-          // sh 'git push origin'
         echo 'PostDeploy'
       }
     }
