@@ -1,0 +1,3 @@
+apply plugin: 'android.com'
+
+version 1
