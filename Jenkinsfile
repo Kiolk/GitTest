@@ -44,8 +44,8 @@ pipeline {
               script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
             )
           def OUTPUT = readFile('curent_branch.txt').trim()
-          sh "githalper.sh $OUTPUT"
-          echo "Current branch $OUTPUT"
+          sh "githalper.sh $OUTPUT ${env.JOB_NAME}"
+          echo "Current branch $OUTPUT ${env.JOB_NAME}"
         }
         echo 'PostDeploy'
       }
