@@ -35,12 +35,9 @@ pipeline {
         sh 'git status'
         sh 'git branch -a'
         sh 'pwd'
-        // sh 'git checkout master'
         script{
-          sh(
-            // echo params.PostDeploy
+          sh{
               script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
-              // returnStdout: true
             )
           def OUTPUT = readFile('curent_branch.txt').trim()
           sh "githalper.sh $OUTPUT"
