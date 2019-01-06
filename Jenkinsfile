@@ -22,14 +22,14 @@ pipeline {
     }
     stage('PostDeploy') {
       when{
-        branch "*release*"
+        branch "release*"
       }
       steps {
         sh 'git fetch'
         sh 'git status'
         sh 'git branch -a'
         sh 'pwd'
-        sh 'githalper.sh'
+        // sh 'githalper.sh'
         // sh 'git checkout master'
         script{
           sh(
