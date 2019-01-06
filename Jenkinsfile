@@ -36,7 +36,7 @@ pipeline {
               // returnStdout: true
             )
           def OUTPUT = readFile('curent_branch.txt').trim()
-          sh 'githalper.sh $OUTPUT'
+          sh "githalper.sh $OUTPUT"
           echo "Current branch $OUTPUT"
         }
           // sh 'git checkout master'
