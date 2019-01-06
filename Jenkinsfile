@@ -29,7 +29,6 @@ pipeline {
         sh 'git status'
         sh 'git branch -a'
         sh 'pwd'
-        // sh 'githalper.sh'
         // sh 'git checkout master'
         script{
           sh(
@@ -37,6 +36,7 @@ pipeline {
               // returnStdout: true
             )
           def OUTPUT = readFile('curent_branch.txt').trim()
+          sh 'githalper.sh $OUTPUT'
           echo "Current branch $OUTPUT"
         }
           // sh 'git checkout master'
