@@ -38,7 +38,7 @@ pipeline {
         // sh 'git checkout master'
         script{
           sh(
-            echo params.PostDeploy
+            // echo params.PostDeploy
               script: 'git rev-parse --abbrev-ref HEAD > curent_branch.txt'
               // returnStdout: true
             )
